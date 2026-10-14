@@ -1,0 +1,1526 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>HotelDO · Eventos y espacios para marcas 2027</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A7%AD%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy-900:#0f2c74;
+    --navy-950:#0a1d4d;
+    --navy-ink:#26315d;
+    --blue-600:#3f5ba0;
+    --blue-400:#559dd3;
+    --orange-500:#df8832;
+    --orange-300:#f0ad66;
+    --ink-0:#ffffff;
+    --ink-70:rgba(255,255,255,.72);
+    --ink-45:rgba(255,255,255,.45);
+    --line-08:rgba(255,255,255,.08);
+    --line-14:rgba(255,255,255,.14);
+    --glass:rgba(255,255,255,.045);
+    --glass-strong:rgba(255,255,255,.07);
+
+    /* light / paper tokens (content area) */
+    --paper:#f3f5fb;
+    --paper-card:#eceff7;
+    --paper-card-2:#ffffff;
+    --paper-line:#dfe3ee;
+    --paper-ink:#132047;
+    --paper-body:#4b5674;
+    --paper-muted:#8993ad;
+    --red-600:#c23b3b;
+    --red-100:#fbe9e7;
+
+    /* rank colors — differentiate Premium/Business/Classic-type tiers */
+    --rank-1:#0f2c74; --rank-1-light:#7b8ab2; --rank-1-soft:rgba(15,44,116,.13);
+    --rank-2:#559dd3; --rank-2-light:#a1c9e6; --rank-2-soft:rgba(85,157,211,.14);
+    --rank-3:#265dae; --rank-3-light:#87a5d2; --rank-3-soft:rgba(38,93,174,.13);
+    --rank-4:#26315d; --rank-4-light:#878da5; --rank-4-soft:rgba(38,49,93,.13);
+    --rank-5:#df8832; --rank-5-light:#edbd8e; --rank-5-soft:rgba(223,136,50,.14);
+    --rank-6:#ff8300; --rank-6-light:#ffba72; --rank-6-soft:rgba(255,131,0,.14);
+
+    --radius:10px;
+    --radius-lg:18px;
+    --maxw:1180px;
+    --header-h:72px;
+    color-scheme: light;
+  }
+  :root:not([data-theme="light"]){ }
+  @media (prefers-color-scheme: light){
+    :root:not([data-theme="dark"]){ }
+  }
+  *{box-sizing:border-box; -webkit-tap-highlight-color: transparent;}
+  html{
+    scroll-behavior:smooth;
+    scroll-padding-top: calc(var(--header-h) + 16px + env(safe-area-inset-top,0px));
+  }
+  body{
+    margin:0;
+    min-height:100%;
+    background: var(--paper);
+    color: var(--paper-ink);
+    font-family: 'Lato', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    font-weight:400;
+    -webkit-font-smoothing:antialiased;
+    padding-top: env(safe-area-inset-top,0px);
+    padding-bottom: env(safe-area-inset-bottom,0px);
+    overflow-x:hidden;
+  }
+  /* dark "accent" surface used for hub, hero band and footer bookends */
+  .surface-dark{
+    background: radial-gradient(1100px 650px at 18% -10%, #15348c 0%, var(--navy-950) 46%, #071536 100%);
+    color: var(--ink-0);
+    position:relative;
+    overflow:hidden;
+  }
+  h1,h2,h3,h4{margin:0; font-family:inherit;}
+  p{margin:0;}
+  a{color:inherit;}
+  button{font-family:inherit; cursor:pointer;}
+  img{max-width:100%; display:block;}
+  ::selection{background: var(--orange-500); color:#1a1200;}
+  :focus-visible{outline:2px solid var(--orange-500); outline-offset:3px; border-radius:4px;}
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; scroll-behavior:auto !important;}
+  }
+
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 28px;}
+  @media (max-width:640px){ .wrap{padding:0 18px;} }
+
+  .bg-grid{
+    position:absolute; inset:0; z-index:0; pointer-events:none;
+    background-image:
+      linear-gradient(var(--line-08) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line-08) 1px, transparent 1px);
+    background-size: 64px 64px;
+    mask-image: radial-gradient(900px 600px at 50% 10%, #000 10%, transparent 72%);
+    opacity:.5;
+  }
+  /* bold two-tone diagonal shapes, decorative, echoing an editorial hero layout */
+  .hub-shape{ position:absolute; z-index:0; pointer-events:none; }
+  .hub-shape-1{
+    top:-8%; right:-10%; width:50%; height:65%;
+    background: linear-gradient(150deg, var(--blue-400), var(--navy-900));
+    clip-path: polygon(28% 0, 100% 0, 100% 100%, 0% 100%);
+    opacity:.3;
+  }
+  .hub-shape-2{
+    bottom:-14%; left:-8%; width:38%; height:48%;
+    background: linear-gradient(20deg, var(--orange-500), var(--rank-3, var(--blue-600)));
+    clip-path: polygon(0 0, 100% 18%, 82% 100%, 0% 100%);
+    opacity:.22;
+  }
+  @media (max-width:760px){ .hub-shape{ display:none; } }
+
+  /* ============ VIEWS ============ */
+  .view{ position:relative; z-index:1; }
+  .view[hidden]{ display:none; }
+  #hub[hidden], #countryView[hidden]{ display:none !important; }
+  .fade-in{ animation: fadeIn .5s ease both; }
+  @keyframes fadeIn{ from{opacity:0; transform:translateY(8px);} to{opacity:1; transform:none;} }
+
+  /* ============ HUB ============ */
+  #hub{
+    min-height:100vh;
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    text-align:center;
+    padding: 64px 24px 56px;
+  }
+  .hub-logo{ width:min(230px, 52vw); margin-bottom:38px; opacity:.96; }
+  .hub-head{
+    font-weight:900;
+    font-size: clamp(28px, 4.6vw, 50px);
+    line-height:1.12;
+    letter-spacing:-0.01em;
+    max-width:14ch;
+    margin:0 auto;
+  }
+  .hub-sub{
+    margin-top:16px;
+    font-weight:300;
+    font-style:italic;
+    font-size: clamp(16px, 1.9vw, 20px);
+    color: var(--blue-400);
+  }
+
+  .route{
+    position:relative;
+    margin-top:64px;
+    width:100%;
+    max-width:980px;
+  }
+  .route-axis{
+    position:absolute;
+    left: 6%; right:6%;
+    top:28px;
+    height:2px;
+    background: linear-gradient(90deg, var(--orange-500), var(--blue-400) 45%, var(--blue-600) 100%);
+    opacity:.55;
+  }
+  @media (max-width:760px){ .route-axis{display:none;} }
+
+  .route-grid{
+    display:flex;
+    flex-wrap:wrap;
+    gap: 22px 14px;
+    justify-content:center;
+    position:relative;
+  }
+  .node{
+    display:flex; flex-direction:column; align-items:center; gap:12px;
+    width:118px;
+    background:none; border:none; color:inherit; padding:6px;
+    border-radius:var(--radius-lg);
+    transition: transform .22s ease;
+  }
+  .node:hover, .node:focus-visible{ transform: translateY(-6px); }
+  .node-badge{
+    width:56px; height:56px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-size:26px;
+    background: var(--glass);
+    border:1.5px solid var(--line-14);
+    box-shadow: 0 0 0 5px rgba(15,44,116,.0), 0 10px 24px -10px rgba(0,0,0,.5);
+    transition: border-color .2s ease, box-shadow .2s ease, background .2s ease;
+  }
+  .node:nth-child(odd) .node-badge{ margin-top:0; }
+  .node:nth-child(even) .node-badge{ margin-top:30px; }
+  @media (max-width:760px){
+    .node:nth-child(even) .node-badge{ margin-top:0; }
+  }
+  .node:hover .node-badge, .node:focus-visible .node-badge{
+    border-color: var(--orange-500);
+    background: rgba(223,136,50,.12);
+  }
+  .node-name{ font-size:13px; font-weight:700; letter-spacing:.01em; }
+  .node-count{ font-size:11px; color:var(--ink-45); font-weight:400; }
+
+  .hub-foot{
+    margin-top:70px;
+    font-size:12.5px;
+    color:var(--ink-45);
+    max-width:46ch;
+    line-height:1.5;
+  }
+
+  /* ============ HEADER (country view) ============ */
+  .topbar{
+    position:sticky; top:0; z-index:20;
+    backdrop-filter: blur(14px) saturate(140%);
+    background: rgba(255,255,255,.86);
+    border-bottom:1px solid var(--paper-line);
+    padding-top: env(safe-area-inset-top,0px);
+  }
+  .topbar-inner{
+    max-width:var(--maxw); margin:0 auto; padding:0 28px;
+    height:var(--header-h);
+    display:flex; align-items:center; justify-content:space-between; gap:18px;
+  }
+  @media (max-width:640px){ .topbar-inner{padding:0 18px;} }
+  .brand-mini{ display:flex; align-items:center; gap:10px; }
+  .brand-mini img{ height:22px; }
+  .back-btn{
+    display:flex; align-items:center; gap:8px;
+    background:transparent; border:1px solid var(--paper-line);
+    color:var(--paper-body); font-size:13.5px; font-weight:700;
+    padding:9px 14px; border-radius:999px;
+    transition: border-color .2s ease, color .2s ease, background .2s ease;
+    white-space:nowrap;
+  }
+  .back-btn:hover{ border-color:var(--orange-500); color:var(--paper-ink); background:rgba(223,136,50,.08); }
+  .back-btn svg{ width:15px; height:15px; }
+
+  /* ============ COUNTRY HERO (dark accent band) ============ */
+  .country-hero{
+    padding: 54px 0 46px;
+  }
+  .country-hero-top{
+    display:flex; align-items:center; gap:18px; flex-wrap:wrap;
+    position:relative; z-index:1;
+  }
+  .flag-big{ font-size:46px; line-height:1; }
+  .country-hero h1{
+    font-size: clamp(30px, 5vw, 46px);
+    font-weight:900;
+    letter-spacing:-0.01em;
+  }
+  .country-tag{
+    margin-top:14px;
+    font-weight:300; font-style:italic;
+    color:var(--blue-400);
+    font-size:17px;
+    max-width:62ch;
+    position:relative; z-index:1;
+  }
+  .country-meta{
+    margin-top:26px;
+    display:flex; gap:28px; flex-wrap:wrap;
+    position:relative; z-index:1;
+  }
+  .meta-item{ display:flex; flex-direction:column; gap:2px; }
+  .meta-num{ font-size:26px; font-weight:900; color:var(--orange-300); }
+  .meta-label{ font-size:12.5px; color:var(--ink-45); }
+
+  /* ============ "próximo evento" info bar ============ */
+  .hero-infobar{ background: var(--navy-ink); position:relative; z-index:2; }
+  .hero-infobar-inner{
+    max-width:var(--maxw); margin:0 auto; padding:0 28px;
+    display:flex; align-items:stretch; min-height:64px;
+  }
+  @media (max-width:640px){ .hero-infobar-inner{ padding:0 18px; flex-wrap:wrap; } }
+  .infobar-left{ flex:1 1 auto; padding:13px 0; display:flex; flex-direction:column; justify-content:center; gap:2px; min-width:0; }
+  .infobar-label{ font-size:10.5px; text-transform:uppercase; letter-spacing:.09em; color:var(--blue-400); font-weight:800; }
+  .infobar-title{ font-size:15.5px; font-weight:900; color:#fff; }
+  .infobar-meta{ font-size:12.5px; color:var(--ink-70); }
+  .infobar-cta{
+    flex:0 0 auto; display:flex; align-items:center; gap:6px;
+    background: var(--orange-500); color:#1a1200;
+    padding:0 22px; font-weight:900; font-size:13.5px; white-space:nowrap;
+    transition: background .18s ease;
+  }
+  .infobar-cta:hover{ background: var(--orange-300); }
+  .infobar-cta svg{ width:14px; height:14px; }
+
+  /* ============ floating "quiero sumar mi marca" button ============ */
+  .float-cta{
+    position:fixed; right:22px; top:58%; transform:translateY(-50%); z-index:100;
+    display:flex; align-items:center;
+    cursor:pointer;
+    user-select:none;
+  }
+  .float-cta-icon{
+    flex:0 0 auto; width:62px; height:62px; border-radius:50%;
+    background:#fff;
+    box-shadow: 0 10px 26px -8px rgba(15,44,116,.45), 0 2px 8px rgba(0,0,0,.12);
+    display:flex; align-items:center; justify-content:center;
+    transition: transform .22s ease, box-shadow .22s ease;
+  }
+  .float-cta-icon img{ width:30px; height:30px; display:block; }
+  .float-cta-text{
+    background: var(--navy-900); color:#fff;
+    font-size:13.5px; font-weight:800;
+    padding:11px 18px; border-radius:999px;
+    white-space:nowrap;
+    margin-right:-26px; padding-right:40px;
+    max-width:0; opacity:0; overflow:hidden;
+    transition: max-width .32s ease, opacity .22s ease, margin-right .32s ease, padding .32s ease;
+  }
+  .float-cta:hover .float-cta-text,
+  .float-cta:focus-visible .float-cta-text,
+  .float-cta.is-open .float-cta-text{
+    max-width:260px; opacity:1; margin-right:-26px; padding:11px 40px 11px 18px;
+  }
+  .float-cta:hover .float-cta-icon,
+  .float-cta:focus-visible .float-cta-icon,
+  .float-cta.is-open .float-cta-icon{
+    transform: scale(1.07);
+    box-shadow: 0 14px 30px -8px rgba(15,44,116,.55), 0 2px 10px rgba(0,0,0,.16);
+  }
+  .float-cta:focus-visible{ outline:none; }
+  .float-cta:focus-visible .float-cta-icon{ outline:2px solid var(--orange-500); outline-offset:3px; }
+  @media (max-width:640px){
+    .float-cta{ right:14px; top:58%; }
+    .float-cta-icon{ width:54px; height:54px; }
+    .float-cta-icon img{ width:26px; height:26px; }
+  }
+
+  /* ============ TABS ============ */
+  .tabs-rail{
+    border-bottom:1px solid var(--paper-line);
+    position: sticky;
+    top: var(--header-h);
+    background: rgba(243,245,251,.92);
+    backdrop-filter: blur(10px);
+    z-index:15;
+  }
+  .tabs{
+    display:flex; gap:8px; overflow-x:auto;
+    padding: 12px 0;
+    scrollbar-width:none;
+  }
+  .tabs::-webkit-scrollbar{display:none;}
+  .tab{
+    flex:0 0 auto;
+    display:flex; align-items:center; gap:8px;
+    background:var(--paper-card-2); border:1px solid var(--paper-line);
+    color:var(--paper-body);
+    font-size:13px; font-weight:700;
+    padding:9px 15px; border-radius:999px;
+    white-space:nowrap;
+    transition: border-color .2s ease, color .2s ease, background .2s ease;
+  }
+  .tab svg{ width:15px; height:15px; flex:0 0 auto; }
+  .tab:hover{ color:var(--paper-ink); border-color:var(--blue-400); }
+  .tab.is-active{
+    background: var(--navy-900);
+    border-color: var(--navy-900);
+    color: var(--ink-0);
+  }
+
+  /* ============ EVENT SECTIONS (light paper theme) ============ */
+  .programs{ padding: 50px 0 40px; display:flex; flex-direction:column; gap:28px; }
+
+  .card{
+    position:relative;
+    background: var(--paper-card);
+    border:1px solid var(--paper-line);
+    border-radius: var(--radius-lg);
+    padding: 30px 30px 28px;
+    scroll-margin-top: calc(var(--header-h) + 64px);
+    box-shadow: 0 1px 2px rgba(19,32,71,.03), 0 14px 32px -20px rgba(19,32,71,.18);
+  }
+  @media (max-width:640px){ .card{ padding:22px 18px 20px; } }
+
+  .card-head{
+    display:flex; align-items:flex-start; gap:16px;
+  }
+  .icon-badge{
+    flex:0 0 auto;
+    width:46px; height:46px; border-radius:12px;
+    display:flex; align-items:center; justify-content:center;
+    background: linear-gradient(145deg, rgba(15,44,116,.12), rgba(15,44,116,.04));
+    border:1px solid rgba(15,44,116,.18);
+    color: var(--navy-900);
+  }
+  .icon-badge svg{ width:24px; height:24px; }
+  .card-head h3{ font-size:21px; font-weight:900; letter-spacing:-.005em; color:var(--paper-ink); }
+  .card-subtitle{ margin-top:3px; font-size:13.5px; color:var(--blue-600); font-weight:700; }
+  .card-desc{ margin-top:16px; font-size:15px; line-height:1.6; color:var(--paper-body); max-width:74ch; white-space:pre-line; }
+  .card-desc strong, .block strong, .tier-meta strong, .pkg-col strong, .note strong{ color:var(--orange-500); font-weight:900; }
+
+  /* ---- stat chips: quick-glance numbers, breaks up flat text blocks ---- */
+  .stats-row{ margin-top:18px; display:flex; flex-wrap:wrap; gap:10px; }
+  .stat-chip{
+    display:flex; align-items:baseline; gap:7px;
+    background: linear-gradient(135deg, rgba(223,136,50,.1), rgba(15,44,116,.05));
+    border:1px solid rgba(223,136,50,.25);
+    border-radius:10px;
+    padding:8px 14px;
+  }
+  .stat-chip b{ font-size:19px; font-weight:900; color:var(--navy-900); }
+  .stat-chip span{ font-size:11.5px; font-weight:700; color:var(--paper-muted); text-transform:uppercase; letter-spacing:.03em; }
+
+  /* ---- colored top accent on every program card, cycling through rank colors ---- */
+  .card{ border-top:4px solid var(--rank, var(--blue-600)); }
+
+  /* ---- per-card interactive CTA button ---- */
+  .card-cta-row{ margin-top:24px; padding-top:18px; border-top:1px solid var(--paper-line); display:flex; justify-content:flex-end; }
+  .card-cta{
+    display:inline-flex; align-items:center; gap:7px;
+    background:#fff; border:1.5px solid var(--rank, var(--orange-500));
+    color:var(--paper-ink);
+    font-size:13px; font-weight:800;
+    padding:9px 16px; border-radius:999px;
+    transition: background .18s ease, color .18s ease, transform .18s ease;
+    white-space:nowrap;
+  }
+  .card-cta svg{ width:14px; height:14px; }
+  .card-cta:hover{ background:var(--rank, var(--orange-500)); color:#fff; transform:translateY(-1px); }
+
+  /* ---- temporary themed image, swapped for the real photo once the Excel links it ---- */
+  .temp-img{
+    position:relative; overflow:hidden;
+    margin-top:20px; height:168px;
+    border-radius:var(--radius-lg);
+    display:flex;
+    box-shadow: 0 14px 28px -18px rgba(19,32,71,.35);
+  }
+  .temp-img .half{ flex:1 1 50%; position:relative; }
+  .temp-img .half.a{ background: linear-gradient(150deg, var(--rank-light, var(--blue-400)), var(--rank, var(--navy-900))); }
+  .temp-img .half.b{ background: var(--navy-ink); background-image: radial-gradient(circle at 30% 30%, rgba(255,255,255,.08), transparent 60%); }
+  .temp-img-icon{
+    position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+    width:52px; height:52px; color:#fff; opacity:.92;
+    filter: drop-shadow(0 6px 10px rgba(0,0,0,.25));
+  }
+  .temp-img-ribbon{
+    position:absolute; top:14px; right:-34px;
+    background: #4b5674; color:#fff;
+    font-size:10.5px; font-weight:900; letter-spacing:.1em; text-transform:uppercase;
+    padding:5px 42px;
+    transform: rotate(32deg);
+    box-shadow:0 3px 8px rgba(0,0,0,.2);
+  }
+  .temp-img-caption{
+    margin-top:8px; font-size:11.5px; color:var(--paper-muted); text-align:center; line-height:1.4;
+  }
+
+  .block-grid{
+    margin-top:22px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(210px, 1fr));
+    gap:14px;
+  }
+  .block{
+    border:1px solid var(--paper-line);
+    border-left:2.5px solid var(--blue-600);
+    border-radius: var(--radius);
+    padding:16px 18px;
+    background: var(--paper-card-2);
+  }
+  .block h4{ font-size:12.5px; text-transform:none; font-weight:700; color:var(--paper-muted); }
+  .block p, .block ul{ margin-top:7px; font-size:14px; line-height:1.55; color:var(--paper-body); }
+  .block ul{ padding-left:18px; }
+  .block li{ margin-bottom:4px; }
+  .block strong{ color:var(--paper-ink); font-weight:700; }
+
+  .tier-grid{
+    margin-top:22px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(200px,1fr));
+    gap:12px;
+  }
+  .tier{
+    position:relative;
+    overflow:hidden;
+    border:1px solid var(--paper-line);
+    border-radius:var(--radius);
+    padding:0;
+    background:
+      linear-gradient(180deg, var(--rank-soft, rgba(63,91,160,.1)) 0%, var(--paper-card-2) 64px);
+    box-shadow: 0 10px 22px -16px rgba(19,32,71,.3);
+    transition: transform .18s ease, box-shadow .18s ease;
+  }
+  .tier::before{
+    content:""; position:absolute; top:0; left:0; right:0; height:4px;
+    background: var(--rank, var(--blue-600));
+  }
+  .tier:hover{ transform: translateY(-2px); box-shadow: 0 14px 26px -16px rgba(19,32,71,.38); }
+  .tier-top{ display:flex; align-items:center; justify-content:space-between; gap:8px; flex-wrap:wrap; }
+  .tier-name{
+    font-size:13px; font-weight:900; letter-spacing:.01em;
+    color:#fff; background:var(--rank, var(--blue-600));
+    padding:5px 12px; border-radius:7px; display:inline-block;
+  }
+  .tier-dot{ width:9px; height:9px; border-radius:50%; flex:0 0 auto; }
+  .tier-cupos{ font-size:11px; font-weight:700; color:#fff; background:var(--navy-900); padding:3px 9px; border-radius:999px; white-space:nowrap; }
+  .tier-desc{ margin-top:8px; font-size:13px; color:var(--paper-body); line-height:1.5; }
+  .tier-meta{ margin-top:9px; font-size:12.5px; color:var(--paper-ink); font-weight:700; line-height:1.4; }
+  .tier-items{ margin-top:10px; padding-left:16px; }
+  .tier-items li{ font-size:13px; line-height:1.5; color:var(--paper-body); margin-bottom:5px; }
+
+  /* ---- real dates / editions ---- */
+  .dates-grid{
+    margin-top:22px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(170px,1fr));
+    gap:12px;
+  }
+  .date-card{
+    border:1px solid var(--paper-line);
+    border-radius:var(--radius);
+    padding:14px 16px;
+    background: var(--paper-card-2);
+    box-shadow: 0 8px 18px -14px rgba(19,32,71,.28);
+  }
+  .date-place{ font-weight:900; font-size:14px; color:var(--paper-ink); }
+  .date-when{ font-size:12.5px; color:var(--blue-600); font-weight:700; margin-top:2px; }
+  .date-meta{ font-size:12px; color:var(--paper-body); margin-top:6px; line-height:1.5; }
+  .date-status{
+    display:inline-block; margin-top:9px;
+    font-size:10.5px; font-weight:800; letter-spacing:.02em;
+    padding:3px 10px; border-radius:999px;
+    background:#eef1f8; color:var(--paper-muted);
+  }
+  .date-status.is-upcoming{ background:rgba(63,91,160,.12); color:var(--blue-600); }
+
+  .country-capacity{
+    margin-top:22px;
+    display:flex; flex-wrap:wrap; gap:10px;
+  }
+  .cap-pill{
+    border:1px solid var(--paper-line);
+    border-radius:999px;
+    padding:8px 14px;
+    font-size:12.5px; color:var(--paper-body);
+    background: var(--paper-card-2);
+  }
+  .cap-pill strong{ color:var(--blue-600); }
+
+  .note{
+    margin-top:18px;
+    font-size:11.5px;
+    color: var(--paper-muted);
+    line-height:1.5;
+  }
+
+  /* ---- SOLD OUT: full, unmissable strip ---- */
+  .soldout-strip{
+    display:flex; align-items:center; gap:9px;
+    background: repeating-linear-gradient(135deg, var(--red-600) 0 18px, #a52f2f 18px 36px);
+    color:#fff;
+    font-size:12.5px; font-weight:900; letter-spacing:.08em; text-transform:uppercase;
+    padding:10px 20px;
+  }
+  .soldout-strip svg{ width:16px; height:16px; flex:0 0 auto; }
+  .ribbon-soldout{
+    background: var(--red-600);
+    color:#fff;
+    font-size:10.5px; font-weight:900; letter-spacing:.07em; text-transform:uppercase;
+    padding:6px 13px;
+    border-radius:999px;
+    box-shadow:0 3px 8px rgba(194,59,59,.3);
+    white-space:nowrap;
+    flex:0 0 auto;
+  }
+  .tier.is-soldout{ border-color:rgba(194,59,59,.45); }
+  .tier.is-soldout::before{ background: var(--red-600); }
+  .tier.is-soldout .tier-name{ background: var(--red-600); }
+  .tier.is-soldout .tier-items{ opacity:.75; }
+  .pkg.is-soldout{ border-color:rgba(194,59,59,.4); }
+  .pkg-head-right{ display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+
+  /* ---- Premium / multi-column package (Campus + ANATO, Tianguis, etc.) ---- */
+  .pkg{
+    position:relative;
+    overflow:hidden;
+    margin-top:26px;
+    border:1px solid var(--paper-line);
+    border-radius: var(--radius-lg);
+    background: var(--paper-card-2);
+    box-shadow: 0 14px 30px -20px rgba(19,32,71,.3);
+  }
+  .pkg-head{
+    padding:18px 24px;
+    background: linear-gradient(100deg, var(--rank-light, var(--orange-300)), var(--rank, var(--orange-500)));
+    display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap;
+  }
+  .pkg.is-soldout .pkg-head{
+    background: linear-gradient(100deg, #e2726d, var(--red-600));
+  }
+  .pkg.is-soldout .pkg-cols{
+    background-image: repeating-linear-gradient(135deg, rgba(194,59,59,.035) 0 14px, rgba(194,59,59,.015) 14px 28px);
+  }
+  .pkg-name{ font-size:17px; font-weight:900; color:#fff; letter-spacing:.01em; }
+  .price-pill{
+    font-size:11.5px; font-weight:700; color:var(--paper-ink);
+    background:rgba(255,255,255,.85);
+    padding:6px 14px; border-radius:999px;
+  }
+  .pkg-sub{ padding:16px 24px 0; font-size:13.5px; color:var(--paper-body); font-weight:700; }
+  .pkg-cols{
+    padding: 16px 24px 22px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(220px,1fr));
+    gap:0;
+  }
+  .pkg-col{ padding:14px 18px; border-left:1px solid var(--paper-line); }
+  .pkg-col:first-child{ border-left:none; padding-left:0; }
+  @media (max-width:760px){
+    .pkg-col{ border-left:none; padding-left:0; border-top:1px solid var(--paper-line); padding-top:16px; }
+    .pkg-col:first-child{ border-top:none; padding-top:14px; }
+  }
+  .pkg-col h4{ font-size:14px; font-weight:900; color:var(--paper-ink); }
+  .pkg-col ul{ margin-top:10px; padding-left:16px; }
+  .pkg-col li{ font-size:13px; line-height:1.55; color:var(--paper-body); margin-bottom:7px; }
+
+  /* ============ FOOTER (dark accent bookend) ============ */
+  footer{
+    margin-top:30px;
+    padding: 34px 0 calc(34px + env(safe-area-inset-bottom,0px));
+    display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;
+  }
+  footer img{ height:20px; opacity:.9; }
+  .foot-text{ font-size:12px; color:var(--ink-45); }
+
+  .cta-row{ display:flex; justify-content:center; padding:40px 0 0; }
+  .cta{
+    display:inline-flex; align-items:center; gap:9px;
+    background: var(--orange-500);
+    color:#1a1200;
+    font-weight:900;
+    font-size:14.5px;
+    padding:13px 22px;
+    border-radius:999px;
+    border:none;
+    transition: transform .18s ease, background .2s ease;
+  }
+  .cta:hover{ background: var(--orange-300); transform: translateY(-2px); }
+</style>
+</head>
+<body>
+
+<!-- ===================== HUB VIEW (dark) ===================== -->
+<main id="hub" class="view surface-dark">
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="hub-shape hub-shape-1" aria-hidden="true"></div>
+  <div class="hub-shape hub-shape-2" aria-hidden="true"></div>
+  <img class="hub-logo" alt="HotelDO" src="data:image/png;base64,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">
+  <h1 class="hub-head">Tu marca, uniendo experiencias y mercados</h1>
+  <p class="hub-sub">Elige el país donde quieres generar impacto.</p>
+
+  <nav class="route" aria-label="Selección de país">
+    <div class="route-axis" aria-hidden="true"></div>
+    <div class="route-grid" id="routeGrid"></div>
+  </nav>
+
+  <p class="hub-foot">Catálogo regional de eventos y espacios de marca HotelDO · 2027. Cada país agrupa los formatos de capacitación, relacionamiento y campañas digitales disponibles para tu marca.</p>
+</main>
+
+<!-- ===================== COUNTRY VIEW ===================== -->
+<div id="countryView" class="view" hidden>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <button class="back-btn" id="backBtn" aria-label="Volver a países">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+        Países
+      </button>
+      <div class="brand-mini"><img alt="HotelDO" src="data:image/png;base64,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"></div>
+    </div>
+  </header>
+
+  <section class="country-hero surface-dark">
+    <div class="bg-grid" aria-hidden="true"></div>
+    <div class="wrap">
+      <div class="country-hero-top">
+        <span class="flag-big" id="countryFlag"></span>
+        <h1 id="countryName"></h1>
+      </div>
+      <p class="country-tag" id="countryTag"></p>
+      <div class="country-meta">
+        <div class="meta-item"><span class="meta-num" id="countryCount"></span><span class="meta-label">formatos disponibles</span></div>
+        <div class="meta-item"><span class="meta-num">2027</span><span class="meta-label">catálogo vigente</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div id="infoBar"></div>
+
+  <div class="tabs-rail">
+    <div class="wrap">
+      <div class="tabs" id="tabsRow"></div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <section class="programs" id="programsList"></section>
+
+    <div class="cta-row">
+      <a class="cta" href="mailto:marketing@hoteldo.com?subject=Quiero%20sumar%20mi%20marca%20a%20HotelDO">
+        Quiero sumar mi marca
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <footer class="surface-dark">
+    <div class="wrap" style="display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; width:100%;">
+      <img alt="HotelDO" src="data:image/png;base64,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">
+      <p class="foot-text">Equipo HotelDO · Marketing B2B 2027</p>
+    </div>
+  </footer>
+</div>
+
+<!-- ===================== FLOATING CTA (icon-only, reveals text on hover) ===================== -->
+<div class="float-cta" id="floatCta" role="button" tabindex="0" aria-label="Quiero sumar mi marca">
+  <span class="float-cta-text">Quiero sumar mi marca</span>
+  <span class="float-cta-icon"><img src="data:image/png;base64,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" alt=""></span>
+</div>
+
+<!-- ===================== ICON SPRITE ===================== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<defs>
+<symbol id="icon-map" viewBox="0 0 24 24"><path d="M3 7l6-2.2 6 2.2 6-2.2v14.4l-6 2.2-6-2.2-6 2.2V7z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/><path d="M9 4.8v14.4M15 7v14.4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+<symbol id="icon-star" viewBox="0 0 24 24"><path d="M12 2.5l3.1 6.3 6.9 1-5 4.9 1.2 6.9L12 18.2l-6.2 3.4 1.2-6.9-5-4.9 6.9-1L12 2.5z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/></symbol>
+<symbol id="icon-cap" viewBox="0 0 24 24"><path d="M12 3L2 8l10 5 10-5-10-5z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/><path d="M6 10.5V15c0 1.4 2.7 2.8 6 2.8s6-1.4 6-2.8v-4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/><path d="M22 9v6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+<symbol id="icon-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M15.5 8.5l-2 5-5 2 2-5 5-2z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+<symbol id="icon-glass" viewBox="0 0 24 24"><path d="M9.3 3h5.4l-1.1 8.4a1.6 3 0 01-3.2 0L9.3 3z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M12 12v7M8.5 19.5h7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+<symbol id="icon-broadcast" viewBox="0 0 24 24"><circle cx="12" cy="19" r="1.2" fill="currentColor" stroke="none"/><path d="M8.3 15.3a5.2 5.2 0 017.4 0M5.2 12.1a9.6 9.6 0 0113.6 0" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+<symbol id="icon-trend" viewBox="0 0 24 24"><path d="M3 16.5l5.5-5.5 4 4L21 7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M15.5 7H21v5.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="icon-monitor" viewBox="0 0 24 24"><rect x="3" y="4.5" width="18" height="12.5" rx="1.6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M10.3 8.3l4.4 2.6-4.4 2.6V8.3z" fill="currentColor" stroke="none"/><path d="M8.5 21h7M12 17v4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+<symbol id="icon-gift" viewBox="0 0 24 24"><rect x="3.5" y="9.5" width="17" height="10.5" rx="1.2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3.5 13h17M12 9.5V20" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 9.5c-1.6 0-4-.9-4-3a2 2 0 014-0.4c0-1.1 1-2 2-2s2 .9 2 2a2 2 0 014 .4c0 2.1-2.4 3-4 3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+<symbol id="icon-ban" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M5.6 5.6l12.8 12.8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+<symbol id="icon-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3 12h18M12 3c2.5 2.5 3.8 6 3.8 9s-1.3 6.5-3.8 9c-2.5-2.5-3.8-6-3.8-9s1.3-6.5 3.8-9z" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+<symbol id="icon-camera" viewBox="0 0 24 24"><path d="M4 8.5a1.5 1.5 0 011.5-1.5h2l1-2h7l1 2h2A1.5 1.5 0 0120 8.5v9A1.5 1.5 0 0118.5 19h-13A1.5 1.5 0 014 17.5v-9z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="13" r="3.4" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+<symbol id="icon-users" viewBox="0 0 24 24"><circle cx="9" cy="8.5" r="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3.5 19c0-3 2.5-5 5.5-5s5.5 2 5.5 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="17.2" cy="9.5" r="2.2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M14.8 19c.3-2.4 2.2-4 4.6-4 2.2 0 4 1.6 4.4 3.7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+</defs>
+</svg>
+
+<script>
+(function(){
+"use strict";
+
+var COUNTRIES = [
+  {code:"BR", name:"Brasil", flag:"🇧🇷", tag:"Campus itinerante por todo Brasil, ABAV Expo Rio, Proyecto Influencer y activaciones de marca a lo largo de 2027."},
+  {code:"MX", name:"México", flag:"🇲🇽", tag:"La plaza con más formatos: Campus, The Tour, Caravana HDO, Tianguis Turístico Puebla, Webinars y acciones online."},
+  {code:"CO", name:"Colombia", flag:"🇨🇴", tag:"ANATO + Campus HotelDO, The Tour (con Lima), eventos exclusivos, cóctel de fin de año y branding de agencias."},
+  {code:"AR", name:"Argentina", flag:"🇦🇷", tag:"FIT, Campus HotelDO, The Tour, eventos exclusivos, FAM y concurso de ventas en 2027."},
+  {code:"CL", name:"Chile", flag:"🇨🇱", tag:"VYVA, Campus con dinámica experiencial, The Tour, eventos exclusivos y FAM para agencias top sellers."},
+  {code:"PE", name:"Perú", flag:"🇵🇪", tag:"Eventos exclusivos en Lima y parada del The Tour regional junto a Colombia."},
+  {code:"US", name:"Estados Unidos", flag:"🇺🇸", tag:"HotelDO Global en las principales ferias internacionales de turismo, más el Summit Universal Orlando Cross."}
+];
+
+/* Contenido 2027 tomado de la base de datos oficial "Vitrine Eventos HotelDO | Extração Limpa"
+   (Google Sheets, pestañas Resumo + Cotas), complementado con el detalle de beneficios ya
+   verificado en los micrositios oficiales por país. Se omiten procesos internos de venta y
+   valores (todos bajo consulta). Fechas marcadas (TBD)/(TBC) siguen pendientes de confirmación
+   oficial por parte del equipo comercial. */
+var PROGRAMS = {
+
+  AR: [
+    {
+      id:"campus", icon:"icon-cap", title:"Campus HotelDO",
+      subtitle:"Nuestro evento insignia de capacitación y networking",
+      desc:"Evento de un día completo donde partners presentan disertaciones a agencias de viajes.",
+      stats:[{label:"Asistentes previstos", value:"80"},{label:"Horario", value:"8:00 – 18:00"}],
+      tiers:[
+        {name:"Diamond", meta:"<strong>50 minutos</strong> de exposición. Campus es de 8:00 a 18:00."},
+        {name:"Gold", meta:"<strong>25 min</strong> exposición + <strong>5 min</strong> quiz. Campus es de 8:00 a 18:00."},
+        {name:"Silver", meta:"<strong>15 min</strong> exposición + <strong>5 min</strong> quiz. Campus es de 8:00 a 18:00."},
+        {name:"Classic", meta:"<strong>Sin exposición</strong>. Campus es de 8:00 a 18:00."}
+      ],
+      dates:[
+        {place:"Córdoba", when:"2 de mayo 2027"},
+        {place:"Buenos Aires", when:"6 de mayo 2027 (TBD)"}
+      ]
+    },
+    {
+      id:"thetour", icon:"icon-compass", title:"The Tour",
+      subtitle:"Disertación + participación en actividad",
+      desc:"Evento itinerante por diferentes ciudades de Argentina que combina disertaciones con una actividad formativa.",
+      stats:[{label:"Audiencia prevista", value:"60 agentes"}],
+      dates:[
+        {place:"Rosario", when:"6 al 8 de abril 2027 (TBD)"},
+        {place:"Mendoza", when:"6 al 8 de abril 2027 (TBD)"}
+      ]
+    },
+    {
+      id:"exclusivos", icon:"icon-star", title:"Evento exclusivo y Mini evento",
+      subtitle:"Capacitación con un solo partner",
+      desc:"Dos formatos de capacitación exclusiva con un único partner, en Argentina.",
+      tiers:[
+        {name:"Evento exclusivo", meta:"<strong>Desayuno o almuerzo para 60 agencias</strong>", items:[
+          "Evento exclusivo con <strong>1 solo partner</strong>",
+          "Rosario: junio 2027",
+          "Córdoba: noviembre 2027",
+          "Buenos Aires: marzo 2028"
+        ]},
+        {name:"Mini evento", meta:"<strong>Desayuno o almuerzo para 30 agencias</strong> (25 agentes de viajes)", items:[
+          "Evento exclusivo con <strong>1 solo partner</strong>",
+          "Disponible de abril a noviembre 2027 y marzo 2028",
+          "Plaza a definir junto al partner"
+        ]}
+      ]
+    },
+    {
+      id:"fit", icon:"icon-users", title:"FIT — Feria Internacional de Turismo",
+      subtitle:"2 al 5 de octubre 2027 · La Rural, Buenos Aires",
+      desc:"La feria de turismo más grande de Argentina. HotelDO participa con counter principal y exposición destacada.",
+      stats:[{label:"Visitantes (est. 2027)", value:"~140.000"}],
+      tiers:[
+        {name:"Main", items:["<strong>Counter principal</strong> + Exposición destacada + merch"]},
+        {name:"Select", items:["<strong>Counter secundario</strong> — Logo en 2da posición + merch"]},
+        {name:"Premium", items:["<strong>Counter simple</strong> + merchandising"]},
+        {name:"Business", items:["Merchandising y branding"]},
+        {name:"Classic", items:["Presencia de marca / comunicaciones varias"]}
+      ],
+      blocks:[
+        {h:"FIT incluye", list:["<strong>Presencia de marca</strong> en todas las comunicaciones","Invitaciones vía mailing, WhatsApp y plataforma online","Mención en medios de la industria (Ladevi, Report) y posteos de LinkedIn"]},
+        {h:"Cóctel asociado (fecha a definir)", list:["<strong>Pantalla rotativa</strong> en el stand","Video recap","Partner Classic: pantallas rotativas, invitaciones, <strong>tarjeta de regalo</strong> para cada asistente, video recap"]}
+      ]
+    },
+    {
+      id:"fam", icon:"icon-glass", title:"FAM o acción / agencias Top Sellers",
+      subtitle:"15 al 19 de noviembre 2027 (TBD) · Buenos Aires",
+      desc:"Auspicio de FAM o acción con agencias top sellers de Argentina.",
+      tiers:[
+        {name:"Main", items:["<strong>Auspicio del FAM</strong>"]},
+        {name:"Classic", items:["Presencia de marca"]}
+      ]
+    },
+    {
+      id:"concurso", icon:"icon-trend", title:"Concurso de ventas",
+      subtitle:"Varias fechas 2027-2028",
+      desc:"Campaña online con <strong>premio para el agente ganador</strong>, pensada como incentivo de ventas para las agencias argentinas."
+    },
+    {
+      id:"merch", icon:"icon-gift", title:"Merchandising / Fechas especiales",
+      subtitle:"Regalo para 30 agencias",
+      desc:"Regalo o merchandising especial para agencias en fechas conmemorativas del calendario comercial argentino.",
+      stats:[{label:"Agencias", value:"30"}]
+    },
+    {
+      id:"rebrand", icon:"icon-star", title:"ReBrand!",
+      subtitle:"Próximamente",
+      desc:"Sin contenido publicado aún en el micrositio — este botón existe en el menú pero todavía no tiene una página cargada detrás. Consultar con el equipo de Argentina qué contenido va acá."
+    }
+  ],
+
+  BR: [
+    {
+      id:"campus", icon:"icon-cap", title:"Campus HotelDO",
+      subtitle:"Proyecto itinerante de capacitación y relacionamiento",
+      desc:"Evento de un día completo donde partners presentan disertaciones a agencias de viajes.",
+      stats:[{label:"Asistentes previstos", value:"150"},{label:"Horario", value:"8hs – 18hs"}],
+      tiers:[
+        {name:"Diamond (Solo parks)", meta:"<strong>50 min</strong> - Presencial (Apenas para Parks). Campus es de 8hs as 18hs."},
+        {name:"Gold", meta:"<strong>30 min</strong> - Presencial (25 min exposición + 5 min Quiz si hay Quiz). Campus es de 8hs as 18hs."},
+        {name:"Silver", meta:"<strong>20 min</strong> - Presencial (15 min exposición + 5 min Quiz si hay Quiz). Campus es de 8hs as 18hs."},
+        {name:"Patrocínio de Cadeira", meta:"<strong>Apenas logo na cadeira</strong> --- Mín. 2 meses antes para produção."},
+        {name:"Cordão com logo", meta:"<strong>Apenas logo no cordão</strong> da credencial --- Mín. 1 mês antes para produção."},
+        {name:"Videos não participantes", meta:"<strong>Apenas vídeos</strong> - sem participação presencial."},
+        {name:"Merchandising", meta:"<strong>140 brindes</strong> produzidos com logo - sem participação presencial --- Mín. 2 meses antes para produção."},
+        {name:"Carrinho doce/pipoca volta coffee", meta:"<strong>Ativação</strong> logo no carrinho --- Mín. 2 meses antes para produção."}
+      ],
+      dates:[
+        {place:"São Paulo 1", when:"25 de marzo 2027"},
+        {place:"Belo Horizonte", when:"14 de junio 2027"},
+        {place:"Nordeste", when:"5 de agosto 2027", meta:"Ciudad a definir"},
+        {place:"São Paulo 2", when:"17 de noviembre 2027"},
+        {place:"Sul", when:"15 de marzo 2028", meta:"Ciudad a definir"}
+      ],
+      note:"Las cuotas presenciales son limitadas y deben venderse con anticipación."
+    },
+    {
+      id:"abav", icon:"icon-users", title:"ABAV Expo Rio de Janeiro",
+      subtitle:"29 de septiembre al 1 de octubre 2027 · Riocentro",
+      desc:"La feria de turismo más grande de Brasil. HotelDO participa con espacios que se definen cerca del evento según reglas propias de ABAV.",
+      stats:[{label:"Personas previstas", value:"4.500–6.000"}],
+      blocks:[
+        {h:"Cotas disponibles", list:["<strong>Ativação</strong> (a definir)","<strong>Ativação</strong> (Pipoca / Sorvete / Café)","<strong>Tela / TV / Pantalla</strong>","<strong>Merchandising</strong>"]}
+      ],
+      note:"Los espacios se definen cerca del evento porque dependen de reglas y definiciones de la propia ABAV."
+    },
+    {
+      id:"inloco", icon:"icon-map", title:"InLoco (ex Exclusivo)",
+      subtitle:"Presentación institucional + networking",
+      desc:"Encuentros rápidos y personalizados con agentes de viajes en puntos estratégicos de todo Brasil. Realizado durante la mañana, tarde o noche — no dura el día entero; puede ser desayuno, almuerzo o cena.",
+      stats:[{label:"Personas por evento", value:"25–40"},{label:"Eventos disponibles", value:"8"}],
+      note:"<strong>No tiene cuotas</strong>: son eventos individuales, 1 solo partner por evento."
+    },
+    {
+      id:"influencer", icon:"icon-star", title:"Proyecto Influencer",
+      subtitle:"Paquete exclusivo para un solo partner",
+      desc:"Paquete de 4 productos para 1 solo partner. El partner que compra Proyecto Influencer paga por el monto total: no se puede comprar por separado.",
+      stats:[{label:"Paquetes disponibles", value:"4"}],
+      blocks:[
+        {h:"Incluye", list:["<strong>Exclusivo G</strong> (hasta 60 personas)","<strong>Exclusivo P</strong> (hasta 30 personas)","<strong>FAMTRIP</strong>","<strong>Webinar</strong>"]}
+      ]
+    },
+    {
+      id:"otras-ferias", icon:"icon-globe", title:"Otras ferias con presencia institucional",
+      subtitle:"WTM, Fórum PANROTAS y Travel Tech Hub",
+      desc:"HotelDO participa en estas ferias de forma institucional. Para 2027 se empezará a evaluar la venta de algunos espacios puntuales.",
+      blocks:[
+        {h:"WTM", t:"<strong>13 al 15 de abril 2027</strong> · São Paulo, Expo Center Norte · <strong>30.000 personas</strong>. Feria de participación obligatoria para B2B; HotelDO participa pero <strong>no comercializa espacios</strong> (no está permitido el ingreso de partners al área de operadores). Costo promedio: <strong>USD 15K</strong> considerando todos los gastos."},
+        {h:"Fórum PANROTAS 2027", t:"<strong>30 y 31 de marzo 2027</strong> · São Paulo, WTC Events Center · <strong>30.000 personas</strong>. HotelDO participa, pero no comercializa espacios (se evaluará vender algunos en 2027)."},
+        {h:"Travel Tech Hub", t:"Fecha a definir. HotelDO participa <strong>como API</strong>, pero no comercializa espacios (se evaluará vender algunos en 2027, solo para Hoteles; la API no cubre todas las verticales)."}
+      ]
+    },
+    {
+      id:"merch", icon:"icon-gift", title:"Merchandising",
+      subtitle:"Acción de marca independiente",
+      desc:"Merchandising independiente: dependiendo de la activación, se pueden producir <strong>brindes más elaborados</strong> o más simples."
+    },
+    {
+      id:"online", icon:"icon-broadcast", title:"Acciones Online y Webinar",
+      subtitle:"Espacios publicitarios y capacitación virtual",
+      desc:"Espacios para conectar a los socios comerciales con agencias de viajes.",
+      stats:[{label:"Webinars disponibles", value:"10"},{label:"Máx. por mes", value:"3"}],
+      blocks:[
+        {h:"Formatos disponibles", list:[
+          "<strong>Banner Home</strong> — banner fijo semanal en la home de cualquier vertical",
+          "<strong>Tab Box</strong> — tarjeta con el logo del partner en las verticales de la home (excepto Paquetes)",
+          "<strong>Banner + Landing</strong> — banner semanal a una página de destino con promociones especiales",
+          "<strong>Mailing Exclusivo</strong> — correo a toda la base de agencias registradas (minoristas y mayoristas)",
+          "<strong>Post en RRSS</strong> — publicación en el feed de Instagram + Facebook",
+          "<strong>Webinar</strong> — realizado en Zoom, máximo 3 por mes, con una persona que hable portugués para la presentación"
+        ]}
+      ]
+    }
+  ],
+
+  MX: [
+    {
+      id:"campus", icon:"icon-cap", title:"Campus HotelDO",
+      subtitle:"Evento de un día completo donde partners presentan disertaciones a agencias de viajes",
+      desc:"Presenta a los invitados novedades tecnológicas, comerciales y de producto, en un espacio de interacción y relaciones públicas.",
+      blocks:[
+        {h:"Materiales a enviar antes del evento", list:["Logo vectorizado (60 días antes)","Presentación 1920x1080, máximo 100 MB","Video 1920x1080, máximo 1 minuto"]}
+      ],
+      tiers:[
+        {name:"Diamond", meta:"<strong>50 min</strong> de exposición."},
+        {name:"Gold", meta:"<strong>25 min</strong> exposición + <strong>5 min</strong> quiz."},
+        {name:"Silver", meta:"<strong>15 min</strong> exposición + <strong>5 min</strong> quiz."}
+      ],
+      dates:[
+        {place:"Monterrey", when:"28 de abril 2027"},
+        {place:"Guadalajara", when:"19 de mayo 2027"},
+        {place:"CDMX", when:"18 de junio 2027"}
+      ],
+      note:"No existe cuota Classic en esta plaza."
+    },
+    {
+      id:"tianguis", icon:"icon-users", title:"Tianguis Turístico Puebla",
+      subtitle:"9 al 12 de marzo 2027 · Puebla",
+      desc:"La feria de turismo más importante de México. HotelDO comercializa espacios directamente. Toda participación incluye presencia del patrocinador en el stand*, mostrador con el logo del patrocinador*, opciones de branding dentro del stand, promoción en RRSS y distribución de regalos/material de marca.",
+      packages:[
+        {name:"Main Sponsor", priceNote:"Máx. 1 cupo", columns:[
+          {title:"Dentro de la feria", items:["<strong>Sector estratégico</strong> dentro del stand: 1 mostrador de atención al público hasta para 3 representantes de la marca","<strong>Activación exclusiva</strong> durante los días de la feria (por confirmar)","Marca destacada en <strong>pantalla principal</strong>","<strong>Merchandising destacado</strong> frente a otras propuestas"]},
+          {title:"En cóctel previo a Tianguis", items:["Presencia de marca en pantallas durante todo el evento","Presencia destacada en el encabezado del backing de fotos","<strong>Patrocinador del show principal</strong>","Presencia en medios digitales","<strong>2 webinars</strong>","Comunicación masiva en medios especializados de la industria","Banner principal en el sitio HotelDO durante la semana del evento"]}
+        ]},
+        {name:"Select", priceNote:"Máx. 1 cupo", columns:[
+          {title:"Dentro de la feria", items:["Presencia de marca en pantallas","Comunicación masiva en redes sociales de HotelDO para atraer asistentes al stand"]},
+          {title:"En cóctel previo a Tianguis", items:["Presencia de marca en pantallas durante todo el evento","Presencia en backing de fotos, <strong>3er nivel</strong>","Presencia en medios digitales","Comunicación masiva en medios especializados de la industria","Tab box en el sitio HotelDO"]}
+        ]},
+        {name:"Premium", priceNote:"Máx. 5 cupos", columns:[
+          {title:"Dentro de la feria", items:["<strong>Mostrador dentro del stand</strong> (participación de 1 representante de la marca)","Presencia de marca en pantallas","<strong>Merchandising masivo</strong>","Comunicación en RRSS de HotelDO para atraer asistentes al stand"]},
+          {title:"En cóctel previo a Tianguis", items:["Presencia de marca en pantallas durante todo el evento","Presencia en backing de fotos, <strong>1er nivel</strong>","Sponsor de alguna activación (por definir)","Presencia en medios digitales","<strong>1 webinar</strong>","Banner secundario"]}
+        ]},
+        {name:"Business", priceNote:"Máx. 6 cupos", columns:[
+          {title:"Dentro de la feria", items:["Presencia de marca en pantallas","Comunicación en redes sociales de HotelDO para atraer asistentes al stand"]},
+          {title:"En cóctel previo a Tianguis", items:["Presencia en backing de fotos, <strong>3er nivel</strong>","Presencia en medios digitales","Comunicación masiva en medios especializados de la industria"]}
+        ]},
+        {name:"Classic", priceNote:"Máx. 10 cupos", columns:[
+          {title:"Dentro de la feria", items:["<strong>Mostrador exclusivo</strong> de atención al público","Presencia de marca en pantallas","<strong>Merchandising masivo</strong>","Comunicación masiva en RRSS de HotelDO para atraer asistentes al stand"]},
+          {title:"En cóctel previo a Tianguis", items:["Presencia de marca en pantallas durante todo el evento","Presencia en backing de fotos, <strong>2º nivel</strong>","Sponsor de alguna activación (por definir)","Presencia en medios digitales","Tab box en el sitio HotelDO"]}
+        ]}
+      ],
+      note:"Materiales a enviar antes del evento: logo vectorizado (60 días antes) y video 1920x1080 de máximo 1 minuto."
+    },
+    {
+      id:"thetour", icon:"icon-compass", title:"HotelDO The Tour",
+      subtitle:"15 min de exposición + 5 min de quiz, en varias ciudades",
+      desc:"Disertación itinerante que recorre distintas ciudades de México. Se puede comprar de forma <strong>individual</strong> o por <strong>bloque</strong> (2 eventos la misma semana).",
+      stats:[{label:"Audiencia prevista", value:"60 agentes"},{label:"Ciudades en 2027", value:"13"}],
+      dates:[
+        {place:"CDMX", when:"26 de mayo"},
+        {place:"Guadalajara", when:"28 de julio"},
+        {place:"Mérida", when:"11 de agosto"},
+        {place:"Cancún", when:"13 de agosto"},
+        {place:"Tijuana", when:"18 de agosto"},
+        {place:"Chihuahua", when:"20 de agosto"},
+        {place:"Puebla", when:"22 de septiembre"},
+        {place:"Querétaro", when:"24 de septiembre"},
+        {place:"Aguascalientes", when:"29 de septiembre"},
+        {place:"León", when:"1 de octubre"},
+        {place:"San Luis Potosí", when:"20 de octubre"},
+        {place:"Morelia", when:"22 de octubre"},
+        {place:"Monterrey", when:"16 de febrero 2028"}
+      ]
+    },
+    {
+      id:"eventos-exclusivos", icon:"icon-star", title:"Eventos Exclusivos",
+      subtitle:"Junio 2027 a marzo 2028",
+      desc:"Eventos limitados a los mejores vendedores de los mercados estratégicos de México. Incluye presencia de marca en medios digitales e impresos, y distribución de material promocional co-brandeado. <strong>1 solo partner</strong> por evento.",
+      stats:[{label:"Eventos disponibles", value:"16"}],
+      blocks:[
+        {h:"Ciudades disponibles", t:"Tijuana, Mérida, Tuxtla, CDMX, Aguascalientes, Saltillo, Morelia, Puebla, Monterrey, Cd. Juárez, CDMX Norte, Cancún, Guadalajara, Chihuahua, San Luis Potosí y Edo. México."}
+      ]
+    },
+    {
+      id:"caravana", icon:"icon-map", title:"Caravana HDO",
+      subtitle:"2 a 3 eventos exclusivos + blitz por ciudad",
+      desc:"Formato que combina <strong>2 a 3 eventos exclusivos</strong> con el partner en plazas diferentes, más un <strong>blitz</strong> por ciudad.",
+      dates:[
+        {place:"León — Querétaro", when:"14 al 16 de abril 2027"},
+        {place:"Pachuca — Toluca", when:"4 al 7 de mayo 2027"},
+        {place:"Monterrey — Guadalajara — CDMX", when:"29 jun-2 jul, 7-10 sep, 26-29 oct 2027, 1-4 feb 2028", meta:"4 bloques en el año"}
+      ]
+    },
+    {
+      id:"webinars", icon:"icon-monitor", title:"Webinars",
+      subtitle:"Capacitación semanal en línea",
+      desc:"Sesiones dinámicas donde la marca invitada presenta productos/servicios y mantiene interacción directa con los participantes.",
+      note:"Webinar semanal, cada miércoles, de abril 2027 a marzo 2028."
+    },
+    {
+      id:"acciones-online", icon:"icon-broadcast", title:"Acciones Online",
+      subtitle:"Espacios publicitarios en el sitio HotelDO",
+      desc:"Conectamos a los socios comerciales con agencias de viajes para maximizar las ventas.",
+      blocks:[
+        {h:"Formatos disponibles", list:[
+          "<strong>Banner Home</strong>: banner fijo semanal en la página de inicio de cualquier vertical",
+          "<strong>Tab Box</strong>: tarjeta con el logo del socio en las verticales de la home (excepto Paquetes)",
+          "<strong>Banner + Landing</strong>: banner semanal que dirige a una página de destino con promociones especiales",
+          "<strong>Mailing exclusivo</strong>: correo dirigido a toda la base de agencias registradas (minoristas y mayoristas)",
+          "<strong>Post en redes sociales</strong>: publicación en el feed de Facebook e Instagram"
+        ]}
+      ]
+    },
+    {
+      id:"convencion-gdl", icon:"icon-glass", title:"Convención de Ventas Guadalajara",
+      subtitle:"Guadalajara, Tequila y Puerto Vallarta",
+      desc:"Un evento único que combina networking de alto nivel con una experiencia inspiradora, ideal para destacar y posicionarse en el competitivo mundo del turismo.",
+      stats:[{label:"Profesionales en total", value:"210"},{label:"Duración", value:"5 días"}],
+      blocks:[
+        {h:"Público objetivo", list:["<strong>150 agentes de viajes</strong> (top sellers de México)","30 profesionales de equipos HotelDO y directivos Despegar","10 invitados: periodistas y medios","20 socios patrocinadores"]}
+      ],
+      note:"Fechas 2027 aún no confirmadas en la base oficial — en 2026 se realizó del 6 al 11 de noviembre. Consultar con el equipo de México antes de ofrecer este formato."
+    }
+  ],
+
+  CO: [
+    {
+      id:"campus-anato", icon:"icon-cap", title:"ANATO + Campus HotelDO",
+      subtitle:"24 al 27 de febrero de 2027 · Bogotá",
+      desc:"Vitrina Turística de ANATO + Campus HotelDO en Bogotá, dos eventos consecutivos que reúnen agentes de viajes de alto potencial, socios estratégicos y aliados comerciales en el stand internacional de la feria más importante de Colombia.",
+      stats:[{label:"Visitantes por día", value:"1.000–1.500"},{label:"Son agentes de viajes", value:"+90%"},{label:"Niveles de participación", value:"6"}],
+      packages:[
+        {name:"Main", priceNote:"Valor mediante consulta", subtitle:"Nivel principal 2027", columns:[
+          {title:"Campus HotelDO + ANATO", items:["<strong>Counter principal</strong> + Exposición destacada (resto de beneficios en confirmación con el equipo comercial)"]},
+          {title:"Vitrina Turística ANATO", items:["Máxima visibilidad en el stand (detalle a confirmar)"]},
+          {title:"Presencia Online", items:["Cobertura ampliada (detalle a confirmar)"]}
+        ]},
+        {name:"Premium Plus", priceNote:"Valor mediante consulta", subtitle:"Participaciones del Campus que requieren representante presencial", columns:[
+          {title:"Campus HotelDO", items:["<strong>Presentación escénica de 30 minutos</strong> (25 min de exposición + 5 min de quiz)","Branding en exposición y sorteo","Presencia en pantallas rotativas","Presencia de marca con banners institucionales en el almuerzo","Presencia en back de fotos"]},
+          {title:"Vitrina Turística ANATO", items:["<strong>Mostrador dentro del stand</strong> de ANATO (1 representante de la marca)","Branding en exposición","Presencia de marca en pantallas rotativas","<strong>Merchandising masivo</strong>","Comunicación masiva en RRSS Despegar para atraer asistentes al stand"]},
+          {title:"Presencia Online", items:["<strong>1 webinar</strong> con alcance de 100 personas cross-mercados Hispanoamérica (fecha a coordinar)","Comunicación masiva en medios especializados de la industria","Banner secundario web HotelDO","RRSS: Story Capitana Despegar*"]}
+        ]},
+        {name:"Select", priceNote:"Valor mediante consulta", soldOut:true, subtitle:"Participaciones del Campus que requieren representante presencial", columns:[
+          {title:"Campus HotelDO", items:["<strong>Presentación escénica de 30 minutos</strong> (25 min de exposición + 5 min de quiz)","Presencia en pantallas rotativas","Presencia de marca con banners institucionales en el almuerzo","Presencia en back de fotos","Exposición de marca en agenda y portavasos o sillas en el evento","Sponsor de alguna de las activaciones (por confirmar)"]},
+          {title:"Vitrina Turística ANATO", items:["<strong>Mostrador dentro del stand</strong> de ANATO (1 representante de la marca)","Presencia de marca en pantallas rotativas","Activación de marca dentro del stand","<strong>Merchandising masivo</strong>","Comunicación masiva en RRSS Despegar para atraer asistentes al stand"]},
+          {title:"Presencia Online", items:["<strong>1 webinar</strong> con alcance de 100 personas cross-mercados Hispanoamérica (fecha a coordinar)","Comunicación masiva en medios especializados de la industria","Banner secundario HotelDO","RRSS: Story Capitana Despegar*"]}
+        ]},
+        {name:"Premium", priceNote:"Valor mediante consulta", subtitle:"Participaciones del Campus que requieren representante presencial", columns:[
+          {title:"Campus HotelDO", items:["<strong>Presentación escénica de 20 minutos</strong> (15 min de exposición + 5 min de quiz)","Presencia en pantallas rotativas","Presencia de marca durante el almuerzo","Presencia en back de fotos","Exposición de marca en libreta repartida en el evento"]},
+          {title:"Vitrina Turística ANATO", items:["<strong>1 mostrador exclusivo</strong> de atención al público","Presencia de marca en pantallas rotativas: placas y videos institucionales","<strong>Merchandising masivo</strong>","Comunicación masiva en RRSS Despegar para atraer asistentes al stand"]},
+          {title:"Presencia Online", items:["<strong>1 webinar</strong> con alcance de 100 personas cross-mercados Hispanoamérica (fecha a coordinar)","Comunicación masiva en medios especializados de la industria","Banner cintillo","RRSS: Story Capitana Despegar*"]}
+        ]},
+        {name:"Business", priceNote:"Valor mediante consulta", subtitle:"Participaciones del Campus que requieren representante presencial", columns:[
+          {title:"Campus HotelDO", items:["<strong>Presentación escénica de 15 minutos</strong> (10 min de exposición + 5 min de quiz)","Presencia en pantallas rotativas","Presencia en back de fotos","Exposición de marca en la libreta entregada en el evento"]},
+          {title:"Vitrina Turística ANATO", items:["Presencia de marca en pantallas rotativas","<strong>Merchandising masivo</strong>","Comunicación masiva en RRSS Despegar para atraer asistentes al stand"]},
+          {title:"Presencia Online", items:["Cobertura del evento antes, durante y después","Comunicación masiva en medios especializados de la industria","Tab box en sitio web HotelDO","RRSS: Story Capitana Despegar*"]}
+        ]},
+        {name:"Classic", priceNote:"Valor mediante consulta", subtitle:"Participaciones del Campus que no requieren representante presencial", columns:[
+          {title:"Campus HotelDO", items:["Presencia en pantallas rotativas","Presencia en back de prensa"]},
+          {title:"Vitrina Turística ANATO", items:["Presencia de marca en pantallas rotativas: placa institucional","Comunicación masiva en RRSS Despegar para atraer asistentes al stand"]},
+          {title:"Presencia Online", items:["Comunicación masiva en medios especializados de la industria","Tab box en sitio web HotelDO"]}
+        ]}
+      ],
+      note:"Materiales (mín. 20 días hábiles antes): logo vectorizado, presentación 1920x1080 (máx. 100MB), video 1920x1080 (máx. 1 min), foto del representante y 1 cortesía para el evento. El nivel \"Select\" corresponde al antiguo \"Premium Select\", agotado para esta edición."
+    },
+    {
+      id:"thetour", icon:"icon-compass", title:"HotelDO The Tour",
+      subtitle:"Capacitación itinerante por Colombia y Perú",
+      desc:"Evento de capacitación de 8 a.m. a 12 p.m. en diferentes ciudades de Colombia, con una parada regional que también incluye Lima (Perú).",
+      dates:[
+        {place:"Medellín · Cali · Bogotá · Lima", when:"18 al 25 de mayo 2027", meta:"Bloque de mayo (incluye Lima)"},
+        {place:"Medellín · Cali · Bogotá", when:"26 al 28 de octubre 2027", meta:"Bloque de octubre"}
+      ]
+    },
+    {
+      id:"exclusive", icon:"icon-star", title:"Evento exclusivo",
+      subtitle:"HotelDO: deja tu marca",
+      desc:"Evento exclusivo de capacitación de <strong>3 horas</strong> para <strong>1 solo partner</strong>, en la ciudad de Colombia a elegir.",
+      stats:[{label:"Eventos disponibles", value:"12"}]
+    },
+    {
+      id:"coctel", icon:"icon-glass", title:"Cóctel de fin de año",
+      subtitle:"17 de noviembre 2027 (TBD) · Bogotá",
+      desc:"<strong>Branding de marca</strong> en el evento de cierre de año, junto a las agencias de mayor venta de la plaza."
+    },
+    {
+      id:"merch", icon:"icon-gift", title:"Merchandising / Incentivos",
+      subtitle:"Acción de marca cobrandeada",
+      desc:"Merchandising cobrandeado para entregar a las agencias en evento, campaña o como incentivo para concursos de ventas.",
+      stats:[{label:"Opciones disponibles", value:"12"}]
+    },
+    {
+      id:"branding-agencias", icon:"icon-users", title:"Branding agencias",
+      subtitle:"Materiales impresos para 30 agencias",
+      desc:"Materiales impresos de branding para agencias de Colombia, con la marca del partner junto a la de HotelDO.",
+      stats:[{label:"Agencias", value:"30"},{label:"Opciones disponibles", value:"2"}]
+    },
+    {
+      id:"webinars", icon:"icon-monitor", title:"Webinars LATAM",
+      subtitle:"HotelDO: forma, inspira, conecta",
+      desc:"Capacitación online donde la marca presenta productos, servicios y beneficios, interactuando en tiempo real con los agentes.",
+      stats:[{label:"Agentes conectados", value:"+100"},{label:"Duración", value:"~60 min"}],
+      blocks:[
+        {h:"Alcance", t:"Agentes conectados <strong>a nivel LATAM</strong> (Colombia, Perú, Ecuador, Chile y Argentina)."},
+        {h:"Formato", t:"Con <strong>cuestionario de cierre</strong> recomendado."}
+      ]
+    }
+  ],
+
+  CL: [
+    {
+      id:"campus", icon:"icon-cap", title:"Campus HotelDO",
+      subtitle:"Evento de un día completo donde partners presentan disertaciones a agencias de viajes",
+      desc:"¡Nuevo! Formato de aprendizaje experiencial: los agentes reciben información estratégica del producto/destino y, en equipos, la transforman en una presentación creativa (jingle, comercial o afiches) usando IA y creatividad, presentada en escenario.",
+      stats:[{label:"Asistentes previstos", value:"80"},{label:"Horario", value:"8:00 – 18:00"}],
+      tiers:[
+        {name:"Diamond", meta:"<strong>50 minutos</strong> de exposición. Campus es de 8:00 a 18:00."},
+        {name:"Gold", meta:"<strong>25 min</strong> exposición + <strong>5 min</strong> quiz. Campus es de 8:00 a 18:00."},
+        {name:"Silver", meta:"<strong>15 min</strong> exposición + <strong>5 min</strong> quiz. Campus es de 8:00 a 18:00."},
+        {name:"Classic", meta:"<strong>Sin exposición</strong>. Campus es de 8:00 a 18:00."}
+      ],
+      dates:[
+        {place:"Santiago", when:"11 de mayo 2027 (TBD)"}
+      ],
+      note:"Posible cóctel de marca asociado — a confirmar oficialmente para la edición 2027."
+    },
+    {
+      id:"thetour", icon:"icon-compass", title:"The Tour",
+      subtitle:"Disertación + participación en actividad",
+      desc:"Evento itinerante en Santiago que combina disertaciones con una actividad formativa.",
+      stats:[{label:"Audiencia prevista", value:"60 agentes"}],
+      dates:[
+        {place:"Santiago", when:"13 de abril 2027 (TBD)"},
+        {place:"Santiago", when:"7 de octubre 2027 (TBD)"}
+      ]
+    },
+    {
+      id:"exclusivos", icon:"icon-star", title:"Evento exclusivo y Mini evento",
+      subtitle:"Capacitación con un solo partner",
+      desc:"Dos formatos de capacitación exclusiva con un único partner, en Chile.",
+      tiers:[
+        {name:"Evento exclusivo", meta:"<strong>Desayuno o almuerzo para 60 agencias</strong>", items:[
+          "Evento exclusivo con <strong>1 solo partner</strong>",
+          "Fechas: 17 de junio y 18 de noviembre 2027 (TBD)",
+          "Santiago / plaza a definir"
+        ]},
+        {name:"Mini evento", meta:"<strong>Desayuno o almuerzo para 30 agencias</strong> (25 agentes de viajes)", items:[
+          "Evento exclusivo con <strong>1 solo partner</strong>",
+          "Disponible de abril a noviembre 2027",
+          "Plaza a definir junto al partner"
+        ]}
+      ]
+    },
+    {
+      id:"fam", icon:"icon-glass", title:"FAM o acción / agencias Top Sellers",
+      subtitle:"15 al 19 de noviembre 2027 (TBD)",
+      desc:"Auspicio de FAM con agencias top sellers.",
+      tiers:[
+        {name:"Main", items:["<strong>Auspicio del FAM</strong>"]},
+        {name:"Classic", items:["Presencia de marca"]}
+      ]
+    },
+    {
+      id:"concurso", icon:"icon-trend", title:"Concurso de ventas / Incentivos",
+      subtitle:"Varias fechas 2027",
+      desc:"Campaña online con <strong>premio para el agente ganador</strong>, como incentivo de ventas para las agencias chilenas."
+    },
+    {
+      id:"vyva", icon:"icon-users", title:"VYVA — Viajes y Vacaciones",
+      subtitle:"20 de octubre 2027 (TBD) · Santiago",
+      desc:"HotelDO participa en VYVA con counter principal y exposición destacada. Es el evento de turismo más importante de Chile (cifra de visitantes agregada de todos los expositores; el stand de HotelDO atiende a una porción de ese público B2B y B2C).",
+      stats:[{label:"Visitantes feria", value:"~140.000"},{label:"Stand HotelDO", value:"54 m²"}],
+      tiers:[
+        {name:"Main", items:["<strong>Sector destacado</strong> dentro del stand, brandeado por la marca: 1 mostrador de atención para 2 personas","Presencia de marca en <strong>pantalla destacada</strong>: logo + videos institucionales","<strong>Merchandising especial (300 u.)</strong>","Exposición preferencial en medios especializados de la industria (LADEVI / REPORTRIP)"]},
+        {name:"Premium", items:["<strong>1 sector exclusivo</strong> de atención al público dentro del stand","Presencia de marca en pantallas rotativas: logo + videos institucionales","<strong>Merchandising masivo (200 u.)</strong>","Comunicación masiva en medios especializados de la industria (LADEVI / REPORTRIP)"]},
+        {name:"Business", items:["Presencia de marca en pantallas rotativas","<strong>Merchandising masivo (150 u.)</strong>","Comunicación masiva en medios especializados de la industria (LADEVI)"]},
+        {name:"Classic", items:["Presencia de marca en pantallas rotativas: placa institucional","Comunicación masiva en medios especializados de la industria (LADEVI)"]}
+      ]
+    },
+    {
+      id:"merch", icon:"icon-gift", title:"Merchandising / Fechas especiales",
+      subtitle:"Objetos memorables para tus clientes",
+      desc:"En cada evento y feria internacional, HotelDO ofrece la posibilidad de que tu marca tenga presencia con <strong>merchandising exclusivo</strong> para los asistentes. También disponible como regalo especial en fechas conmemorativas del calendario 2027.",
+      stats:[{label:"Agencias (fechas especiales)", value:"30"}]
+    },
+    {
+      id:"perfil-viajero", icon:"icon-users", title:"Perfil de viajero",
+      subtitle:"Pendiente de revisar",
+      desc:"Sección del micrositio chileno con datos/estadísticas del viajero chileno — pendiente de revisión detallada. Avísame si quieres que la abra y la sume con contenido completo."
+    }
+  ],
+
+  PE: [
+    {
+      id:"exclusivos", icon:"icon-star", title:"Evento exclusivo",
+      subtitle:"HotelDO: deja tu marca",
+      desc:"Evento exclusivo de capacitación de <strong>3 horas</strong> para <strong>1 solo partner</strong>, en Lima.",
+      stats:[{label:"Eventos disponibles", value:"6"}],
+      dates:[
+        {place:"Lima", when:"Abril 2027"},
+        {place:"Lima", when:"Junio 2027"},
+        {place:"Lima", when:"Septiembre 2027"},
+        {place:"Lima", when:"Noviembre 2027"},
+        {place:"Lima", when:"Enero 2028"},
+        {place:"Lima", when:"Marzo 2028"}
+      ]
+    },
+    {
+      id:"thetour", icon:"icon-compass", title:"HotelDO The Tour",
+      subtitle:"Parada regional junto a Colombia",
+      desc:"Lima participa como una parada del The Tour regional, que también recorre Medellín, Cali y Bogotá. Evento de capacitación de 8 a.m. a 12 p.m.",
+      dates:[
+        {place:"Lima (bloque regional MDE·CLO·BOG·LIM)", when:"18 al 25 de mayo 2027", meta:"Fecha exacta de Lima a coordinar dentro de este bloque"}
+      ],
+      note:"El bloque de octubre (26-28 de octubre 2027) <strong>no incluye parada en Lima</strong>, solo Medellín, Cali y Bogotá."
+    },
+    {
+      id:"merch", icon:"icon-gift", title:"Merchandising / Incentivos",
+      subtitle:"Acción de marca cobrandeada",
+      desc:"Merchandising cobrandeado para entregar a las agencias en evento, campaña o como incentivo para concursos de ventas.",
+      stats:[{label:"Opciones disponibles", value:"12"}]
+    }
+  ],
+
+  US: [
+    {
+      id:"tradeshows", icon:"icon-globe", title:"Trade Shows internacionales",
+      subtitle:"HotelDO Global, a Despegar Group brand",
+      desc:"HotelDO Global participa en múltiples ferias internacionales de turismo en América, Europa y Asia, ampliando el alcance de la marca y reforzando su impacto global dentro de la industria de viajes. En algunas, HotelDO comercializa espacios directamente; en otras, solo tiene presencia institucional.",
+      blocks:[
+        {h:"Por qué asociar tu marca con HotelDO a nivel global", list:[
+          "Visibilidad garantizada en un espacio de alta exposición, junto a una marca respaldada por Despegar Group",
+          "Alianza estratégica con una compañía líder del ecosistema de viajes B2B en mercados internacionales",
+          "Posicionamiento ante compradores calificados, agencias y DMCs que buscan nuevos socios y soluciones tecnológicas",
+          "Integración en la comunicación antes, durante y después del evento (newsletter, redes sociales y materiales del stand)"
+        ]}
+      ],
+      dates:[
+        {place:"FITUR", when:"20 al 24 de enero 2027", meta:"Madrid, España · IFEMA", status:"Presencia institucional"},
+        {place:"OTM Mumbai", when:"1 al 3 de febrero 2027", meta:"Mumbai, India · Jio World Convention Centre", status:"Presencia institucional"},
+        {place:"Las Vegas Travel Agent Forum", when:"21 al 24 de marzo 2027", meta:"Las Vegas, Nevada · Paris Las Vegas Hotel · 1.500 personas", status:"Con espacios en venta"},
+        {place:"ATM Dubai", when:"3 al 6 de mayo 2027", meta:"Dubái, EAU · Dubai World Trade Centre", status:"Presencia institucional"},
+        {place:"IPW", when:"2 al 6 de mayo 2027", meta:"New Orleans, Louisiana · Ernest N. Morial Convention Center · 5.200 personas", status:"Con espacios en venta"},
+        {place:"ITB China", when:"25 al 27 de mayo 2027", meta:"Shanghái, China · Shanghai World Expo Exhibition & Convention Center · 23.000 personas", status:"Con espacios en venta"},
+        {place:"ConX", when:"1 y 2 de junio 2027", meta:"Mallorca, España · Workshop", status:"Presencia institucional"},
+        {place:"AfterX", when:"1 y 2 de junio 2027", meta:"Mallorca, España · Workshop", status:"Presencia institucional"},
+        {place:"IFTM Top Resa", when:"15 al 17 de septiembre 2027 (TBD)", meta:"París, Francia · Paris Expo Porte de Versailles", status:"Presencia institucional"},
+        {place:"ITB Asia", when:"20 al 22 de octubre 2027", meta:"Singapur · Sands Expo & Convention Centre · dentro del booth de Juniper · ~18.000 personas", status:"Presencia institucional"},
+        {place:"Skift", when:"Fecha a definir", meta:"Participación a nivel ejecutivo (executive level)", status:"Presencia institucional"}
+      ],
+      tiers:[
+        {name:"Paquete estándar sin presencia física", meta:"Precio bajo consulta — aplica en ferias con espacios en venta", items:["<strong>Logo en el panel</strong> de la feria","Artículos de merchandising para distribución","Video en pantalla durante el evento","Campaña digital","Webinar antes o después del evento"]},
+        {name:"Activación especial", meta:"Sujeta a disponibilidad por los altos costos de los stands en ferias internacionales", items:["<strong>Servicio de café de marca</strong> o estación de barista con la identidad del sponsor","Sorteo o regalo con premios relacionados al destino o producto","Experiencia sensorial o de degustación (chocolates, aromas, bebidas locales)"]}
+      ]
+    },
+    {
+      id:"summit-cross", icon:"icon-star", title:"Summit Universal Orlando Cross",
+      subtitle:"19 al 23 de abril 2027 · Orlando",
+      desc:"El Summit es como un <strong>SUPER FAM</strong>, con participación del equipo HotelDO y agencias invitadas. Es una inmersión a gran escala para profundizar el conocimiento del producto. Evento <strong>cross-mercado</strong>: aplica a todos los mercados de HotelDO, no solo a Estados Unidos.",
+      stats:[{label:"Audiencia prevista", value:"200 personas"},{label:"Duración", value:"5 días"}],
+      tiers:[
+        {name:"Strategic Partner", items:["<strong>Alojamiento + alimentación + traslado</strong> durante el Summit","2 capacitaciones","Sponsor de un momento destacado"]},
+        {name:"Training Partner", items:["<strong>2 capacitaciones</strong> en jornadas Training","Exposición de marca integral antes, durante y post Summit"]},
+        {name:"Day Partner", items:["<strong>Brand en Gift Card</strong> de alimentación","Auspicio de la agenda del día","Branding en lanyards","Exposición de marca integral"]},
+        {name:"Gift Partner", items:["<strong>Brand en Gift Card</strong> de alimentación","Auspicio de la agenda del día","Branding en lanyards","Exposición de marca integral"]},
+        {name:"Classic", items:["Exposición de marca integral antes, durante y post Summit"]}
+      ],
+      note:"En la base oficial, Day Partner y Gift Partner comparten la misma descripción de beneficios — a confirmar con el equipo si son niveles distintos o una duplicación."
+    }
+  ]
+};
+function countForCountry(code){
+  return (PROGRAMS[code] || []).length;
+}
+
+function buildHub(){
+  COUNTRIES.forEach(function(c){
+    var btn = document.createElement("button");
+    btn.className = "node";
+    btn.type = "button";
+    btn.innerHTML =
+      '<span class="node-badge">' + c.flag + '</span>' +
+      '<span class="node-name">' + c.name + '</span>' +
+      '<span class="node-count">' + countForCountry(c.code) + ' formatos</span>';
+    btn.addEventListener("click", function(){ showCountry(c.code); });
+    routeGrid.appendChild(btn);
+  });
+}
+
+function blockHTML(b){
+  var inner = "";
+  if (b.t) inner += "<p>" + b.t + "</p>";
+  if (b.list) {
+    inner += "<ul>" + b.list.map(function(li){ return "<li>" + li + "</li>"; }).join("") + "</ul>";
+  }
+  return '<div class="block"><h4>' + b.h + '</h4>' + inner + '</div>';
+}
+
+function rankStyle(idx){
+  var n = (idx % 6) + 1;
+  return 'style="--rank:var(--rank-' + n + ');--rank-light:var(--rank-' + n + '-light);--rank-soft:var(--rank-' + n + '-soft);"';
+}
+
+function soldoutStripHTML(){
+  return '<div class="soldout-strip"><svg><use href="#icon-ban"/></svg>Agotado · Sold out</div>';
+}
+
+function tierHTML(t, idx){
+  var strip = t.soldOut ? soldoutStripHTML() : '';
+  var cupos = t.cupos ? '<span class="tier-cupos">' + t.cupos + '</span>' : '';
+  var meta = t.meta ? '<p class="tier-meta">' + t.meta + '</p>' : '';
+  var items = t.items ? '<ul class="tier-items">' + t.items.map(function(li){ return '<li>' + li + '</li>'; }).join("") + '</ul>' : '';
+  return (
+    '<div class="tier' + (t.soldOut ? ' is-soldout' : '') + '" ' + rankStyle(idx) + '>' + strip +
+      '<div style="padding:16px 16px 14px;">' +
+      '<div class="tier-top"><span class="tier-name">' + t.name + '</span>' + cupos + '</div>' +
+      meta + items +
+      '</div>' +
+    '</div>'
+  );
+}
+
+function pkgHTML(pkg, idx){
+  var strip = pkg.soldOut ? soldoutStripHTML() : '';
+  var cols = pkg.columns.map(function(c){
+    return '<div class="pkg-col"><h4>' + c.title + '</h4><ul>' + c.items.map(function(li){ return '<li>' + li + '</li>'; }).join("") + '</ul></div>';
+  }).join("");
+  return (
+    '<div class="pkg' + (pkg.soldOut ? ' is-soldout' : '') + '" ' + rankStyle(idx) + '>' + strip +
+      '<div class="pkg-head"><span class="pkg-name">' + pkg.name + '</span>' +
+        '<span class="pkg-head-right">' + (pkg.priceNote ? '<span class="price-pill">' + pkg.priceNote + '</span>' : '') + '</span>' +
+      '</div>' +
+      (pkg.subtitle ? '<p class="pkg-sub">' + pkg.subtitle + '</p>' : '') +
+      '<div class="pkg-cols">' + cols + '</div>' +
+    '</div>'
+  );
+}
+
+function datesHTML(dates){
+  return '<div class="dates-grid">' + dates.map(function(d){
+    var status = d.status ? '<span class="date-status' + (d.status === "Próximo" ? ' is-upcoming' : '') + '">' + d.status + '</span>' : '';
+    return (
+      '<div class="date-card">' +
+        '<p class="date-place">' + d.place + '</p>' +
+        '<p class="date-when">' + d.when + '</p>' +
+        (d.meta ? '<p class="date-meta">' + d.meta + '</p>' : '') +
+        status +
+      '</div>'
+    );
+  }).join("") + '</div>';
+}
+
+function statsHTML(stats){
+  return '<div class="stats-row">' + stats.map(function(s){
+    return '<div class="stat-chip"><b>' + s.value + '</b><span>' + s.label + '</span></div>';
+  }).join("") + '</div>';
+}
+
+function programHTML(p, idx){
+  var blocks = (p.blocks || []).map(blockHTML).join("");
+  var tiersHTML = (p.tiers && p.tiers.length) ? '<div class="tier-grid">' + p.tiers.map(function(t,i){ return tierHTML(t,i); }).join("") + '</div>' : "";
+  var pkgsHTML = (p.packages && p.packages.length) ? p.packages.map(function(pk,i){ return pkgHTML(pk,i); }).join("") : "";
+  var datesBlock = (p.dates && p.dates.length) ? datesHTML(p.dates) : "";
+  var statsBlock = (p.stats && p.stats.length) ? statsHTML(p.stats) : "";
+  var noteHTML = p.note ? '<p class="note">' + p.note + '</p>' : "";
+  var mediaHTML =
+    '<div class="temp-img" ' + rankStyle(idx) + '>' +
+      '<div class="half a"></div><div class="half b"></div>' +
+      '<svg class="temp-img-icon"><use href="#' + p.icon + '"/></svg>' +
+      '<span class="temp-img-ribbon">Temporal</span>' +
+    '</div>' +
+    '<p class="temp-img-caption">Imagen ilustrativa — se reemplaza por la foto o video real al vincular el link en la columna "Imágenes" del Excel.</p>';
+  var ctaHref = "mailto:marketing@hoteldo.com?subject=" + encodeURIComponent("Quiero el espacio: " + p.title) + "&body=" + encodeURIComponent("Hola equipo HotelDO,\n\nMe interesa conocer disponibilidad y valores para \"" + p.title + "\".\n\nGracias.");
+  var ctaHTML =
+    '<div class="card-cta-row">' +
+      '<a class="card-cta" href="' + ctaHref + '">Consultar disponibilidad' +
+        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>' +
+      '</a>' +
+    '</div>';
+
+  return (
+    '<article class="card" id="sec-' + p.id + '" ' + rankStyle(idx) + '>' +
+      '<div class="card-head">' +
+        '<span class="icon-badge"><svg><use href="#' + p.icon + '"/></svg></span>' +
+        '<div><h3>' + p.title + '</h3><p class="card-subtitle">' + p.subtitle + '</p></div>' +
+      '</div>' +
+      (p.desc ? '<p class="card-desc">' + p.desc + '</p>' : '') +
+      statsBlock +
+      mediaHTML +
+      (blocks ? '<div class="block-grid">' + blocks + '</div>' : '') +
+      tiersHTML +
+      pkgsHTML +
+      datesBlock +
+      noteHTML +
+      ctaHTML +
+    '</article>'
+  );
+}
+function showCountry(code){
+  var c = COUNTRIES.find(function(x){ return x.code === code; });
+  if (!c) return;
+  var list = PROGRAMS[code] || [];
+
+  document.getElementById("countryFlag").textContent = c.flag;
+  document.getElementById("countryName").textContent = c.name;
+  document.getElementById("countryTag").textContent = c.tag;
+  document.getElementById("countryCount").textContent = list.length;
+
+  tabsRow.innerHTML = list.map(function(e){
+    return '<button class="tab" data-target="sec-' + e.id + '"><svg><use href="#' + e.icon + '"/></svg>' + e.title + '</button>';
+  }).join("");
+
+  programsList.innerHTML = list.map(function(e,i){ return programHTML(e,i); }).join("");
+
+  var flagship = list.find(function(e){ return e.dates && e.dates.length; });
+  var infoBar = document.getElementById("infoBar");
+  if (flagship) {
+    var d = flagship.dates[0];
+    infoBar.innerHTML =
+      '<div class="hero-infobar"><div class="hero-infobar-inner">' +
+        '<div class="infobar-left">' +
+          '<span class="infobar-label">Próximo en agenda</span>' +
+          '<span class="infobar-title">' + flagship.title + '</span>' +
+          '<span class="infobar-meta">' + d.place + ' · ' + d.when + '</span>' +
+        '</div>' +
+        '<a class="infobar-cta" href="#sec-' + flagship.id + '">Ver detalles' +
+          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>' +
+        '</a>' +
+      '</div></div>';
+    infoBar.querySelector(".infobar-cta").addEventListener("click", function(ev){
+      ev.preventDefault();
+      var target = document.getElementById("sec-" + flagship.id);
+      if (target) target.scrollIntoView({behavior:"smooth", block:"start"});
+    });
+  } else {
+    infoBar.innerHTML = "";
+  }
+
+  Array.prototype.forEach.call(tabsRow.querySelectorAll(".tab"), function(btn){
+    btn.addEventListener("click", function(){
+      Array.prototype.forEach.call(tabsRow.querySelectorAll(".tab"), function(b){ b.classList.remove("is-active"); });
+      btn.classList.add("is-active");
+      var target = document.getElementById(btn.getAttribute("data-target"));
+      if (target) target.scrollIntoView({behavior:"smooth", block:"start"});
+    });
+  });
+
+  hub.hidden = true;
+  countryView.hidden = false;
+  countryView.classList.remove("fade-in");
+  void countryView.offsetWidth;
+  countryView.classList.add("fade-in");
+  window.scrollTo(0,0);
+  history.replaceState(null, "", "#" + code.toLowerCase());
+}
+
+function showHub(){
+  countryView.hidden = true;
+  hub.hidden = false;
+  hub.classList.remove("fade-in");
+  void hub.offsetWidth;
+  hub.classList.add("fade-in");
+  window.scrollTo(0,0);
+  history.replaceState(null, "", "#");
+}
+
+document.getElementById("backBtn").addEventListener("click", showHub);
+
+/* Floating CTA: icon-only, reveals "Quiero sumar mi marca" on hover/tap.
+   No navigation wired yet — intentionally inert until instructed otherwise. */
+var floatCta = document.getElementById("floatCta");
+if (floatCta) {
+  floatCta.addEventListener("click", function(e){
+    e.preventDefault();
+    floatCta.classList.toggle("is-open");
+  });
+  floatCta.addEventListener("keydown", function(e){
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      floatCta.classList.toggle("is-open");
+    }
+  });
+}
+
+buildHub();
+
+var startHash = (location.hash || "").replace("#","").toUpperCase();
+var startCountry = COUNTRIES.find(function(c){ return c.code === startHash; });
+if (startCountry) { showCountry(startCountry.code); }
+
+})();
+</script>
+</body>
+</html>
